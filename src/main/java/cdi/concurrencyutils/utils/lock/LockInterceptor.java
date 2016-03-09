@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cdi.concurrency.concurrencyutils.lock;
+package cdi.concurrencyutils.utils.lock;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import javax.interceptor.AroundInvoke;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cdi.concurrency.concurrencyutils.async;
+package cdi.concurrencyutils.utils.lock;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;
@@ -28,8 +28,9 @@ import javax.interceptor.InterceptorBinding;
  */
 @Inherited
 @InterceptorBinding
-@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface CDIAsynchronous {
+@Target({ElementType.METHOD, ElementType.TYPE})
+public @interface Lock {
 
+  LockType value() default LockType.WRITE;
 }
