@@ -16,9 +16,9 @@
 package cdi.concurrencyutils.utils.async;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import javax.annotation.Resource;
+import javax.enterprise.concurrent.ManagedExecutorService;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
@@ -32,7 +32,7 @@ import javax.interceptor.InvocationContext;
 public class CDIAsyncInterceptor {
 
   @Resource
-  private ExecutorService executerService;
+  private ManagedExecutorService executerService;
 
   @AroundInvoke
   public Object intercept(final InvocationContext ic) {
